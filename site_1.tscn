@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu5qymas3k8ub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55m03"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awt7r"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Site1" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_55m03")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = 135.0
+offset_right = 187.0
+offset_bottom = 276.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[color=blue]B[color=red]o[color=yellow]o[color=blue]g[color=green]l[color=red]e"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -589.0
+offset_top = -137.0
+offset_right = 603.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_awt7r")
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Search"

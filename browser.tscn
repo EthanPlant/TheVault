@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://chc0pces078r0"]
+
+[ext_resource type="Texture2D" uid="uid://biv38ahetoif1" path="res://Menurect.png" id="1_kgmfc"]
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="2_u2vgl"]
+[ext_resource type="Texture2D" uid="uid://dkymedm4q1wui" path="res://CloseButton.png" id="3_7oh8c"]
+[ext_resource type="PackedScene" uid="uid://bu5qymas3k8ub" path="res://site_1.tscn" id="4_qltgv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2vgl"]
+texture = ExtResource("1_kgmfc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgmfc"]
+bg_color = Color(0.188235, 0.0117647, 0.85098, 1)
+
+[node name="Browser" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u2vgl")
+
+[node name="Titlebar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgmfc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Titlebar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Title" type="Label" parent="Titlebar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("2_u2vgl")
+theme_override_font_sizes/font_size = 25
+text = "Michealsoft Intranet Navigator"
+
+[node name="CloseButton" type="TextureRect" parent="Titlebar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_7oh8c")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Site1" parent="Panel" instance=ExtResource("4_qltgv")]
+layout_mode = 1
