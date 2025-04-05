@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://fe42rkala3mn"]
+
+[ext_resource type="Script" uid="uid://dkllc8fwrxo8a" path="res://game.gd" id="1_80nbo"]
+
+[node name="Game" type="VBoxContainer" node_paths=PackedStringArray("address_bar", "page")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80nbo")
+address_bar = NodePath("HBoxContainer/AddressBar")
+page = NodePath("NinePatchRect/MarginContainer")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AddressBar" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "example.com"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Go
+"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.6685, 14.9136)
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
