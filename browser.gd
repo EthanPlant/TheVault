@@ -4,6 +4,7 @@ var page_map: Dictionary = {
 	"coldmail.org": "res://inbox.tscn",
 	"silentarchive.garlic": "res://forum.tscn",
 	"silentarchive.garlic/login": "res://login.tscn",
+	"dead-drop.cryptonetwork.cc": "res://dead_drop.tscn",
 }
 
 

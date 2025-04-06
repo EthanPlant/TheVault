@@ -78,12 +78,12 @@ theme_override_fonts/font = ExtResource("1_pcb8i")
 theme_override_font_sizes/font_size = 25
 text = "Off Topic"
 
-[node name="Email" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="Posts" type="Panel" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_awt7r")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Email"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Posts"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,36 +93,34 @@ grow_vertical = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/Email/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/Posts/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ForumPost" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
+[node name="ForumPost" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
 layout_mode = 2
 size_flags_vertical = 3
 Author = "Anonymous (15:25)"
 Post = "The Vault is real. It's there, hidden in plain sight. The question is not whether you can find it, but whether you will make it out alive. You should be cautious with what you seek.You’re about to uncover what most can’t even begin to imagine…"
 
-[node name="ForumPost2" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
+[node name="ForumPost2" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
 layout_mode = 2
 size_flags_vertical = 3
 Author = "Anonymous (15:26)"
 Post = "The Vault is closer than you think. Solve the following riddle and gain access to the next step. But be warned—only the keenest eyes will see the truth hidden within .The first clue lies within the second sentence. Read between the lines: \"I am not alive, but I grow. I do not have lungs, but I need air. I do not have a mouth, but water kills me. Find the key. Good luck, Seeker."
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
 theme_override_fonts/font = ExtResource("1_pcb8i")
 theme_override_font_sizes/font_size = 25
 text = "Anonymous (15:25)"
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
@@ -132,16 +130,14 @@ text = "The Vault is real. It's there, hidden in plain sight. The question is no
 You’re about to uncover what most can’t even begin to imagine…"
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
 theme_override_fonts/font = ExtResource("1_pcb8i")
 theme_override_font_sizes/font_size = 25
 text = "Anonymous (15:26)"
 
-[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Posts/MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
