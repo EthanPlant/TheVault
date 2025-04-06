@@ -1,0 +1,180 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjxj48kbvnyyy"]
+
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_pcb8i"]
+[ext_resource type="PackedScene" uid="uid://blwrfcd4rq3xg" path="res://forum_post.tscn" id="2_kplmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55m03"]
+bg_color = Color(0.252028, 0.252028, 0.252028, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awt7r"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awt7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyb0a"]
+draw_center = false
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Forum" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_55m03")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_awt7r")
+text = "All Discussions"
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "Announcements"
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "General"
+
+[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "Off Topic"
+
+[node name="Email" type="Panel" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_awt7r")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Email"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/Email/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ForumPost" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
+layout_mode = 2
+size_flags_vertical = 3
+Author = "Anonymous (15:25)"
+Post = "The Vault is real. It's there, hidden in plain sight. The question is not whether you can find it, but whether you will make it out alive. You should be cautious with what you seek.You’re about to uncover what most can’t even begin to imagine…"
+
+[node name="ForumPost2" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_kplmg")]
+layout_mode = 2
+size_flags_vertical = 3
+Author = "Anonymous (15:26)"
+Post = "The Vault is closer than you think. Solve the following riddle and gain access to the next step. But be warned—only the keenest eyes will see the truth hidden within .The first clue lies within the second sentence. Read between the lines: \"I am not alive, but I grow. I do not have lungs, but I need air. I do not have a mouth, but water kills me. Find the key. Good luck, Seeker."
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "Anonymous (15:25)"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "The Vault is real. It's there, hidden in plain sight. The question is not whether you can find it, but whether you will make it out alive. You should be cautious with what you seek.
+You’re about to uncover what most can’t even begin to imagine…"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "Anonymous (15:26)"
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "You think the world is a puzzle, but it’s really a game of patience. It’s in the numbers you ignore. Look at what you’ve overlooked, and you will see it.
+Here’s a clue, but only for those who deserve it:
+
+ “I’m not visible, but I’m always there. I start with an end, and I end with a start. I hold your fate, though I am never in sight. Find me.”"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 55.0
+offset_right = 163.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wyb0a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 268.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.352941, 0.772549, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 50
+text = "Silent Archive"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 10.0
+offset_right = 635.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("1_pcb8i")
+theme_override_font_sizes/font_size = 25
+text = "Login"

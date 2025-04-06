@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bu5qymas3k8ub"]
 
-[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_awt7r"]
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_4apmy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55m03"]
 bg_color = Color(1, 1, 1, 1)
@@ -48,7 +48,7 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_awt7r")
 text = "Inbox"
@@ -56,21 +56,21 @@ text = "Inbox"
 [node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 text = "Drafts"
 
 [node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 text = "Sent"
 
 [node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 text = "Deleted"
 
@@ -92,14 +92,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 text = "Subject: A Path You Shouldn't Have Followed..."
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Email/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_awt7r")
+theme_override_fonts/font = ExtResource("1_4apmy")
 theme_override_font_sizes/font_size = 25
 text = "From: bmljZSB0cnk@electronmail.com"
 
@@ -111,11 +111,11 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 offset_top = -4.0
 offset_right = 558.0
-offset_bottom = 302.0
+offset_bottom = 297.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_awt7r")
+theme_override_fonts/normal_font = ExtResource("1_4apmy")
 theme_override_font_sizes/normal_font_size = 25
 text = "You don’t know me, but I’ve been watching. And you’ve found it—what you've been searching for. But be warned, what you seek is not just knowledge. It is power. And power has consequences.
 
