@@ -23,6 +23,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_u2vgl")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Site1" parent="Panel" instance=ExtResource("4_qltgv")]
+layout_mode = 1
+offset_top = 33.0
+
 [node name="Titlebar" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 10
@@ -30,41 +42,33 @@ anchor_right = 1.0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = -1.0
-offset_bottom = 34.0
+offset_bottom = 32.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kgmfc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Titlebar"]
+[node name="MarginContainer" type="MarginContainer" parent="Titlebar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Titlebar/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="Title" type="Label" parent="Titlebar/HBoxContainer"]
+[node name="Title" type="Label" parent="Titlebar/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("2_u2vgl")
 theme_override_font_sizes/font_size = 25
-text = "Michealsoft Intranet Navigator"
+text = "Email - Michealsoft Intranet Navigator"
 
-[node name="CloseButton" type="TextureRect" parent="Titlebar/HBoxContainer"]
+[node name="CloseButton" type="TextureRect" parent="Titlebar/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_7oh8c")
 expand_mode = 3
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Site1" parent="Panel" instance=ExtResource("4_qltgv")]
-layout_mode = 1

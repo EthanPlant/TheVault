@@ -16,20 +16,16 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=960
+window/size/viewport_width=640
+window/size/viewport_height=480
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/custom_font=""
 
 [gui]
 
-fonts/canvas_textures/default_texture_filter=1
-fonts/size/viewport_height=648
-fonts/size/viewport_width=1152
-fonts/stretch/scale=1.0
-fonts/stretch/mode="disabled"
-fonts/size/resizable=true
+theme/default_font_antialiasing=2
 
 [rendering]
 

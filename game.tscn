@@ -46,8 +46,11 @@ color = Color(0, 0.501961, 0.501961, 1)
 
 [node name="Browser" parent="." instance=ExtResource("1_fc0e3")]
 layout_mode = 1
-offset_right = -3.0
-offset_bottom = -40.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_bottom = 203.0
 
 [node name="Taskbar" type="Panel" parent="."]
 layout_mode = 1
