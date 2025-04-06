@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fe42rkala3mn"]
+[gd_scene load_steps=10 format=3 uid="uid://fe42rkala3mn"]
 
 [ext_resource type="PackedScene" uid="uid://chc0pces078r0" path="res://browser.tscn" id="1_fc0e3"]
 [ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_feb5d"]
@@ -12,6 +12,13 @@ bg_color = Color(0.705882, 0.705882, 0.705882, 1)
 draw_center = false
 border_width_top = 1
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryrav"]
+texture = ExtResource("3_feb5d")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fc0e3"]
 texture = ExtResource("2_feb5d")
@@ -87,6 +94,9 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_feb5d")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxTexture_ryrav")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ryrav")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ryrav")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fc0e3")
 text = "Start"
 
