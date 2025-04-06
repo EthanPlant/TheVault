@@ -55,7 +55,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("2_u2vgl")
 theme_override_font_sizes/font_size = 25
-text = "Email - Michealsoft Intranet Navigator"
+text = "Michealsoft Intranet Navigator"
 
 [node name="CloseButton" type="TextureRect" parent="Titlebar/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -76,5 +76,3 @@ anchor_bottom = 1.0
 offset_top = 70.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[connection signal="switch_page" from="AddressBar" to="." method="_on_switch_page"]

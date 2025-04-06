@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjxj48kbvnyyy"]
+[gd_scene load_steps=8 format=3 uid="uid://bjxj48kbvnyyy"]
 
 [ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_pcb8i"]
+[ext_resource type="Script" uid="uid://frpafi3ea8yq" path="res://forum.gd" id="1_so1lq"]
 [ext_resource type="PackedScene" uid="uid://blwrfcd4rq3xg" path="res://forum_post.tscn" id="2_kplmg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55m03"]
@@ -28,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_55m03")
+script = ExtResource("1_so1lq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -169,7 +171,7 @@ theme_override_fonts/font = ExtResource("1_pcb8i")
 theme_override_font_sizes/font_size = 50
 text = "Silent Archive"
 
-[node name="Button" type="Button" parent="."]
+[node name="LoginButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 541.0
 offset_top = 10.0
@@ -178,3 +180,5 @@ offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("1_pcb8i")
 theme_override_font_sizes/font_size = 25
 text = "Login"
+
+[connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]

@@ -3,6 +3,7 @@ extends Panel
 var page_map: Dictionary = {
 	"coldmail.org": "res://inbox.tscn",
 	"silentarchive.garlic": "res://forum.tscn",
+	"silentarchive.garlic/login": "res://login.tscn",
 }
 
 
@@ -11,6 +12,7 @@ var current_scene: Control
 
 func _ready() -> void:
 	_load_page(preload("res://inbox.tscn"))
+	EventBus.connect("switch_page", _on_switch_page)
 	$AddressBar.set_text(current_page)
 
 func _on_switch_page(address: String) -> void:
