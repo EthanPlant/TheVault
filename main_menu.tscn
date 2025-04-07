@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://cc67p2uxps226"]
+
+[ext_resource type="Texture2D" uid="uid://cxinwaaoi3qdy" path="res://VaultLogo.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dx0bqk45r0fd4" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://biv38ahetoif1" path="res://Menurect.png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://d3f63wq8y2yon" path="res://Menurect-Invert.png" id="3_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("3_jix8l")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("3_fu7sn")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="Main Menu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhts7")
+script = ExtResource("1_glbon")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_06t4h")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.294118)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 100
+text = "The Vault"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = 89.0
+offset_right = 142.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jix8l")
+text = "Enter the Vault"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://chc0pces078r0"]
+[gd_scene load_steps=12 format=3 uid="uid://chc0pces078r0"]
 
 [ext_resource type="Texture2D" uid="uid://biv38ahetoif1" path="res://Menurect.png" id="1_kgmfc"]
 [ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="2_u2vgl"]
 [ext_resource type="Script" uid="uid://bnnfkog2uuiyb" path="res://browser.gd" id="2_w5c5x"]
 [ext_resource type="Texture2D" uid="uid://dkymedm4q1wui" path="res://CloseButton.png" id="3_7oh8c"]
 [ext_resource type="PackedScene" uid="uid://deav23cdqtold" path="res://address_bar.tscn" id="5_x0m2j"]
+[ext_resource type="Texture2D" uid="uid://d3f63wq8y2yon" path="res://Menurect-Invert.png" id="6_w5c5x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2vgl"]
 texture = ExtResource("1_kgmfc")
@@ -15,6 +16,27 @@ texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgmfc"]
 bg_color = Color(0.188235, 0.0117647, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0m2j"]
+texture = ExtResource("1_kgmfc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4tuot"]
+texture = ExtResource("6_w5c5x")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5c5x"]
+texture = ExtResource("1_kgmfc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [node name="Browser" type="Panel"]
 anchors_preset = 15
@@ -76,3 +98,55 @@ anchor_bottom = 1.0
 offset_top = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="InvalidUrlPopup" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 226.0
+offset_top = 201.0
+offset_right = -238.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x0m2j")
+
+[node name="Label" type="Label" parent="InvalidUrlPopup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_right = 53.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u2vgl")
+theme_override_font_sizes/font_size = 25
+text = "Invalid URL"
+horizontal_alignment = 1
+
+[node name="DismissButton" type="Button" parent="InvalidUrlPopup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u2vgl")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_4tuot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4tuot")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w5c5x")
+text = "Dismiss"
+
+[connection signal="pressed" from="InvalidUrlPopup/DismissButton" to="." method="_on_dismiss_button_pressed"]

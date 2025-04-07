@@ -1,0 +1,227 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2ojw56aath02"]
+
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_ou3v3"]
+[ext_resource type="Script" uid="uid://d2fe6lv27olwi" path="res://vault_login.gd" id="1_qiq5g"]
+[ext_resource type="Shader" uid="uid://t2oi58t3q8bj" path="res://glitch.gdshader" id="1_s4wad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvd7c"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4wad"]
+
+[sub_resource type="Animation" id="Animation_s4wad"]
+resource_name = "FadeInText"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.92, 0.1932, 0.22954, 0), Color(0.917647, 0.196078, 0.235294, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xsa7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsa7h"]
+_data = {
+&"FadeInText": SubResource("Animation_s4wad"),
+&"RESET": SubResource("Animation_xsa7h")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4wad"]
+shader = ExtResource("1_s4wad")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 10.0
+shader_parameter/shake_block_size = 10.0
+shader_parameter/shake_color_rate = 0.01
+
+[node name="VaultLogin" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvd7c")
+script = ExtResource("1_qiq5g")
+
+[node name="LoginContents" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoginContents"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LoginContents/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.775063, 0.775063, 0.775063, 1)
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 75
+text = "Greetings Traveller"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="LoginContents/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+text = "You have done well to reach this point. The Vault awaits, but to enter you must proved that you have seen what others have missed. Six pieces of a hidden code lie within your reach. Only those who find them will see the Vault's contents."
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LoginContents/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Num1" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Num2" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Num3" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Num4" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Num5" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Num6" type="LineEdit" parent="LoginContents/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+alignment = 1
+
+[node name="Button" type="Button" parent="LoginContents/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+text = "Access"
+
+[node name="Label3" type="Label" parent="LoginContents/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 18
+text = "Each number is hidden in plain sight. Each step you've taken has brought you closer to unlocking what was always meant to be found. But remember—truth can be as much a trap as a treasure."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="EndingContents" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s4wad")
+
+[node name="Label" type="Label" parent="EndingContents"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+text = "You have seen the truth, but not in the way you think. What you see is not what is. What is, is not what you see. Welcome to the end of comprehension. You are the key, and the key is lost."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="EndingContents"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_ou3v3")
+theme_override_font_sizes/font_size = 25
+text = "
+
+    \"The Vault was never meant to be opened. And now that it has been, neither you nor anyone else will ever escape its influence.\""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndingContents"]
+libraries = {
+&"": SubResource("AnimationLibrary_xsa7h")
+}
+
+[node name="ColorRect" type="ColorRect" parent="EndingContents"]
+material = SubResource("ShaderMaterial_s4wad")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="EndingContents"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="LoginContents/VBoxContainer/Button" to="." method="_on_submit"]
+[connection signal="animation_finished" from="EndingContents/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="EndingContents/Timer" to="." method="_on_timer_timeout"]

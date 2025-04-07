@@ -30,6 +30,7 @@ window/custom_font=""
 [gui]
 
 theme/default_font_antialiasing=2
+theme/stretch/scale_mode="integer"
 
 [rendering]
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1xf55dyinjuc"]
+
+[ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="1_igd7v"]
+
+[node name="HiddenNetworkPost" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Author" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_igd7v")
+theme_override_font_sizes/font_size = 25
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_igd7v")
+theme_override_font_sizes/font_size = 25
+
+[node name="Post" type="Label" parent="."]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("1_igd7v")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkwqww044pncd"]
+[gd_scene load_steps=12 format=3 uid="uid://bkwqww044pncd"]
 
+[ext_resource type="Script" uid="uid://4eieix8gk1w2" path="res://dead_drop.gd" id="1_o7poh"]
 [ext_resource type="Texture2D" uid="uid://cxinwaaoi3qdy" path="res://VaultLogo.png" id="1_spa4c"]
 [ext_resource type="FontFile" uid="uid://cywuids3j5fx4" path="res://Windows Regular.ttf" id="2_emo1v"]
 [ext_resource type="Texture2D" uid="uid://daklbbfygvefb" path="res://Clock.jpeg" id="3_88jxw"]
@@ -30,6 +31,13 @@ texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o7poh"]
+texture = ExtResource("4_lijr5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
 [node name="DeadDrop" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_emo1v")
+script = ExtResource("1_o7poh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,7 +67,7 @@ size_flags_vertical = 0
 texture = ExtResource("1_spa4c")
 stretch_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+[node name="Password" type="LineEdit" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -67,7 +76,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_lijr5")
 placeholder_text = "Access Code"
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="EnterButton" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -111,9 +120,11 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_emo1v")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_o7poh")
 text = "lunchtime.jpeg (2.4 KB) (67x37)"
 horizontal_alignment = 1
 
@@ -127,3 +138,5 @@ theme_override_font_sizes/font_size = 25
 text = "\"The numbers you seek are prime, simple but elusive. One is hidden in plain sight within the image, another lies within the boundaries of its form."
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/EnterButton" to="." method="_on_enter_button_pressed"]
